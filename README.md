@@ -1,1 +1,1 @@
-# dpu-modern-data-pipelines
+# dpu-modern-data-pipelined
