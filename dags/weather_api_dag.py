@@ -3,9 +3,9 @@ from datetime import timedelta
 
 from airflow import DAG
 from airflow.models import Variable
-from airflow.operators.email import EmailOperator
 from airflow.operators.empty import EmptyOperator
 from airflow.operators.python import PythonOperator
+from airflow.operators.email import EmailOperator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.utils import timezone
 
@@ -35,7 +35,6 @@ def _get_weather_data():
 
     with open(f"{DAG_FOLDER}/data.json", "w") as f:
         json.dump(data, f)
-
 
 def _validate_data():
     with open(f"{DAG_FOLDER}/data.json", "r") as f:
